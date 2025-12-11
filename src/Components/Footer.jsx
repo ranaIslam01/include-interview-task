@@ -85,7 +85,7 @@ const Footer = () => {
 
       {/* All right reserved */}
       <hr className='mt-30'/>
-      <div className='flex items-center justify-between text-[14px] mt-10'>
+      <div className='flex items-center justify-between text-[14px] my-10'>
          <p>@ All right reserved</p>
          <h1 className='font-bold text-2xl'>Includi</h1>
          <p>privecy & cookies</p>
