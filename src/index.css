@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import url("https://use.typekit.net/xzr6alo.css");
+
+body {
+  font-family: "cooper-hewitt", sans-serif;
+}
+
+@theme{
+  --color-primary: #000000;
+  --color-secondary: #FDCE00;
+  --color-primary-white: #FEFBEB;
+}
+
+@layer utilities {
+  .clip-hex {
+    clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 50%,
+      75% 100%,
+      25% 100%,
+      0% 50%
+    );
+  }
+}
