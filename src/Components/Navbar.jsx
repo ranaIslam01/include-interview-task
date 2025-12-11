@@ -79,12 +79,12 @@ const Navbar = () => {
       <nav className={navbarClasses}>
         
         {/* Logo */}
-        <h1 className="font-bold text-[28px] lg:text-[32px]">includi</h1>
+        <a href="/" className="font-bold text-[28px] lg:text-[32px] md:pr-4">includi</a>
 
-        {/* Desktop/Tablet Menu Container */}
-        <div className="flex items-center md:space-x-6 lg:space-x-8 text-[16px] lg:text-[18px] font-semibold">
+        {/* Desktop/Tablet/Mobile Menu Container */}
+        <div className="flex items-center space-x-2 md:space-x-6 lg:space-x-8 text-[16px] lg:text-[18px] font-semibold">
           
-          {/* Desktop Menu Items */}
+          {/* Desktop Menu Items (Hidden on Mobile) */}
           <ul className="hidden md:flex md:space-x-6 lg:space-x-8">
             {DESKTOP_MENU_ITEMS.map((item) => (
               <li key={item} className="hover:underline cursor-pointer">
@@ -93,28 +93,20 @@ const Navbar = () => {
             ))}
           </ul>
           
-          {/* EN ▼ Button */}
-          <li className="list-none hidden md:block border rounded-full border-black px-3 py-1 cursor-pointer hover:bg-black hover:text-white duration-200">
+          {/* EN ▼ Button (Visible on all devices, adjusted for mobile space) */}
+          <li className="list-none md:block border rounded-full border-black px-3 py-1 cursor-pointer hover:bg-black hover:text-white duration-200 text-sm md:text-base">
             EN ▼
           </li>
 
-          {/* Menu Icon (Mobile) */}
-          <button
-            onClick={toggleMenu}
-            className="text-black hover:opacity-70 duration-200 md:hidden"
-          >
-            <HiMenuAlt4 size={32} />
-          </button>
-          
-          {/* Custom Menu Button (Image এর মতো Hexagon Background সহ) */}
+          {/* Custom Menu Button (Hexagon Background - Visible on all devices) */}
           <div 
             onClick={toggleMenu}
-            // w-10 h-10 থেকে w-12 h-12 করা হয়েছে যাতে আইকনটি বড় দেখায়
-            className="w-12 h-10 bg-black clip-hex flex items-center justify-center -mr-10 cursor-pointer hidden md:flex" 
+            // Hexagon button is now visible on mobile/desktop
+            className="w-12 h-10 bg-black clip-hex flex items-center justify-center -mr-6 md:-mr-10 cursor-pointer" 
           >
-             {/* HiMenuAlt4 আইকনটি ব্যবহার করা হয়েছে যা একটি হ্যামবার্গার মেনু আইকন */}
-             <HiMenuAlt4 size={24} className="text-yellow-500" />
+              <HiMenuAlt4 size={24} className="text-yellow-500" />
           </div>
+          
         </div>
       </nav>
 
@@ -132,11 +124,14 @@ const Navbar = () => {
           <IoClose size={30} />
         </button>
 
-        {/* Menu Layout */}
-        <div className="w-full h-full flex flex-col md:flex-row justify-start md:justify-center items-start gap-10 md:gap-32 px-10 pt-20 md:px-16 md:pt-32">
+        {/* Menu Layout (Responsive adjustments) */}
+        <div 
+            className="w-full h-full flex flex-col md:flex-row justify-start md:justify-center items-start gap-10 md:gap-32 
+            px-10 pt-20 pb-20 md:px-16 md:pt-32 overflow-y-auto" 
+        >
           
-          {/* LEFT SIDE MAIN MENU */}
-          <ul className="text-[36px] lg:text-[42px] font-bold space-y-4 md:space-y-6">
+          {/* LEFT SIDE MAIN MENU (Adjusted text size and spacing for mobile) */}
+          <ul className="text-[32px] sm:text-[36px] lg:text-[42px] font-bold space-y-3 md:space-y-6">
             {MEGA_MENU_ITEMS.map((item) => (
               <li key={item} className="hover:text-yellow-400 cursor-pointer">
                 {item}
@@ -144,8 +139,8 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* RIGHT SIDE SUB MENU */}
-          <div className="text-[20px] lg:text-[22px] font-semibold space-y-3 pt-8 md:pt-0"> 
+          {/* RIGHT SIDE SUB MENU (Adjusted text size and spacing for mobile) */}
+          <div className="text-[18px] sm:text-[20px] lg:text-[22px] font-semibold space-y-3 pt-6 md:pt-0">
             <div className="flex items-center gap-3">
               JOBS{" "}
               <span className="bg-yellow-400 text-black px-2 rounded-full text-[14px] font-bold">

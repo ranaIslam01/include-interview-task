@@ -26,13 +26,13 @@ const SOCIAL_ICONS = [
 
 const Footer = () => {
   return (
-    <div className="bg-primary h-screen text-secondary py-16 px-6 md:px-16">
+    <div className="bg-primary h-full lg:h-screen text-secondary py-16 px-6 md:px-16">
       
       <div className='flex justify-end'>
-        <button className="flex items-center gap-2 uppercase border border-secondary text-secondary px-5 py-1 rounded-full hover:text-primary hover:bg-secondary duration-500 font-bold cursor-pointer mb-10">
+        <a href='/' className="flex items-center gap-2 uppercase border border-secondary text-secondary px-5 py-1 rounded-full hover:text-primary hover:bg-secondary duration-500 font-bold cursor-pointer mb-10">
           Scroll to top 
           <MdOutlineArrowOutward size={20} />
-        </button>
+        </a>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
